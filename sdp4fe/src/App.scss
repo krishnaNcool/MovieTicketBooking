@@ -1,0 +1,181 @@
+.App {
+  text-align: center;
+}
+
+svg {
+  .bar-group {
+    text {
+      font-family: FontAwesome;
+    }
+  }
+}
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.header-menu {
+  min-width: auto !important;
+  padding: 5px 10px !important;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  position: sticky;
+  top: 0;
+  height: 45px;
+  img {
+    height: 40px;
+  }
+  .header-text {
+    flex-grow: 1;
+    text-align: center;
+    span {
+      margin-left: 20px;
+      font-weight: bold;
+    }
+    // div {
+    //   font-style: italic;
+    // }
+  }
+}
+.tabs {
+  position: sticky;
+  top: 44px;
+}
+.tabpanel {
+  /* overflow-y: scroll; */
+  overflow: auto;
+  /* width: 50%; */
+  height: calc(100vh - 140px);
+  padding: 0 !important;
+}
+
+.gantt-svg {
+  height: calc(100vh - 185px);
+  /* height: 50px; */
+  overflow: auto;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.zoom-footer {
+  position: fixed;
+  right: 20px;
+  z-index: 99999;
+  bottom: 10px;
+  background: #cc9cff;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border-color: #8f23ff;
+  border-style: solid;
+}
+
+.main {
+  padding: 0 10% 0 10%;
+}
+.tab {
+  font-size: 12px !important;
+  text-transform: capitalize !important;
+}
+.gant-header {
+  padding-left: 20px;
+  padding-bottom: 5px;
+  font-size: x-small;
+  display: flex;
+  height: 31px;
+  align-items: center;
+  span {
+    color: #9c27b0;
+    text-decoration: underline;
+  }
+  .gantt-header-buttons {
+    text-align: right;
+    flex: 1;
+  }
+  button {
+    font-size: xx-small;
+    text-transform: capitalize;
+    margin-left: 5px;
+    span {
+      color: white;
+    }
+  }
+}
+.landing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh - 20px);
+}
+.footer {
+  a {
+    text-decoration: none;
+    color: #8f23ff;
+    font-weight: 500;
+  }
+  div {
+    text-align: left;
+  }
+}
+
+.calculate {
+  cursor: pointer;
+  bottom: 65px;
+  right: 0;
+  position: absolute;
+  z-index: 1;
+  .icon{
+    height: 80px;
+  }
+}
+.text {
+  font-size: x-small;
+}
+.container {
+  padding: 10px;
+  height: 100%;
+  background-color: #fff;
+}
+
+.recharts-default-legend{
+  font-size: 12px;
+}
+.recharts-cartesian-axis-tick-value{
+  font-size: 10px;
+}
+.recharts-label{
+  font-size: 12px;
+}

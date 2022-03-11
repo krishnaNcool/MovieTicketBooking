@@ -1,0 +1,308 @@
+type Company { 
+  structuredness: Int
+  technologyLevel: Int
+  companyStructuredness: Int
+  visualOrder: Int
+  title: String
+  companySize: Int
+  numberPastProjects: Int
+  tstamp: String
+  cruser: Int
+  crdate: String
+  name: String
+  id: Int
+  homeCountry: Int 
+  terms: [Term] @relationship(type: "HAS_TERM", direction: OUT)  
+
+  }
+
+type Term { 
+  displayInformation: String
+  longTerm: String
+  shortTerm: String
+  comment: String
+  modifiableBoolean: Boolean
+  id: Int 
+
+  }
+
+type Activity { 
+  earliestFinish: Int
+  currentStepPercentage: Int
+  sdpTask: String
+  companyName: String
+  sdpLongName: String
+  minWorkload: Int
+  sdpName: String
+  companyTask: String
+  number: String
+  unitTimeNumerical: Int
+  sdpDescription: String
+  id: String
+  swimlaneName: String
+  maxNumberPeople: Int
+  criticalActivityNumber: String
+  companyDescription: String
+  active: Boolean
+  earliestStart: Int
+  maximumAchievablePercentage: Int
+  numberPredecessorsFinished: Int
+  latestFinish: Int
+  sumMaxPerc: Int
+  output_Calc: String
+  taskLongName: String
+  sumMinPerc: Int
+  workedInTimeStep: Boolean
+  dayOfFirstPredecessorFinished: Int
+  latestStart: Int
+  criticalActivity: String
+  endDay: String
+  maxTimeNeeded: Int
+  originalNumber: String
+  halfTime: Float
+  workload: Float
+  numberPredecessors: Int
+  lead: String
+  sdpRisks: String
+  minTimeNeeded: Int
+  inputsSet: Boolean
+  taskNumber: String
+  daysWaited: Int
+  longName: String
+  companyLongName: String
+  companyRisks: String
+  companyTaskLongName: String
+  swimlaneTitle: String
+  originalName: String
+  group: String
+  startDay: String
+  originalDaysNeeded: Float
+  swimlaneId: Int
+  done: Boolean
+  startingActivity: Boolean
+  task: String
+  percentageComplete: Int
+  Function_Type: String
+  name: String
+  minTimeNeededDays: Int
+  maxWorkload: Int
+  daysNeeded: Float
+  taskStart: Int
+  needed: Boolean
+  description: String
+  degreeOfParallelization: Float
+  peopleDistributed: Boolean
+  numberPeople: Float
+  minNumberPeople: Int
+  swimlaneNumber: String
+  criticalPathCosts: Float
+  percentageMinMax: Float
+  original: Boolean
+  daysWorked: Int
+  sdpTaskLongName: String
+  risks: String
+  mightBeCritical: Boolean
+  isCritical: Boolean
+  limitingNode: String
+  taskId: Int
+  unitTime: String
+  peopleSkillLevels: [Float ]
+  support: [String ]
+  weights: [String ]
+  peopleStructureNumbers: [Float ]
+  minPercFloatWeighted: [Int ]
+  minUnit: [String ]
+  evidence: [String ]
+  peopleCounts: [Int ]
+  predecessors: [String ]
+  maxPercFloat: [Int ]
+  inputValues: [Int ]
+  maxUnit: [String ]
+  minPercFloat: [Int ]
+  maxPercFloatWeighted: [Int ]
+  minPerc: [String ]
+  peopleStructure: [String ]
+  maxPerc: [String ]
+  dependent_on: [String ]
+  peopleStructureNumbersSkills: [Float ]
+  deliverables: [String ] 
+  terms: [Term] @relationship(type: "HAS_TERM", direction: OUT)  
+
+}
+
+type Swimlane { 
+  taskFillHex: String
+  companyTitle: String
+  companyName: String
+  preProjectTaskFillHex: String
+  description: String
+  sdpName: String
+  title: String
+  delete: Boolean
+  number: String
+  taskBorderHex: String
+  cricticalPathTaskTextColourHex: String
+  swimlaneNumber: String
+  sdpDescription: String
+  id: Int
+  visualOrder: Int
+  swimlaneName: String
+  swimlaneBackgroundHex: String
+  sdpTitle: String
+  cricticalPathTaskFillHex: String
+  companyDescription: String
+  display: Boolean
+  companyTagDescription: String
+  label: String
+  sdpTagDescription: String
+  taskTextColourHex: String
+  name: String
+  preProjectTaskTextColourHex: String
+  tagDescription: String
+  taskStarts: [Int ]
+  diffTasks: [String ]
+  tasks: [Task] @relationship(type: "BELONGS_TO_SWIMLANE", direction: IN)  
+  }
+
+type Task { 
+  progress: Int
+  isPreProjectTask: Boolean
+  companyLongName: String
+  start: String
+  end: String
+  needed: Boolean
+  companyName: String
+  companyDescription: String
+  description: String
+  sdpLongName: String
+  swimlaneId: Int
+  sdpName: String
+  swimlaneTitle: String
+  number: String
+  name: String
+  swimlaneNumber: String
+  sdpDescription: String
+  id: String
+  isMilestone: Boolean
+  swimlaneName: String
+  longName: String
+  activities: [Activity] @relationship(type: "BELONGS_TO_TASK", direction: IN)
+}
+
+type Milestone {
+  earliestFinish: Int
+  companyLongName: String
+  companyRisks: String
+  sdpTask: String
+  companyName: String
+  sdpLongName: String
+  sdpName: String
+  companyTaskLongName: String
+  swimlaneTitle: String
+  companyTask: String
+  number: String
+  id: Int
+  swimlaneName: String
+  maxNumberPeople: Int
+  group: String
+  startDay: Int
+  active: Boolean
+  swimlaneId: Int
+  earliestStart: Int
+  done: Boolean
+  numberPreActivities: Int
+  task: String
+  numberPredecessorsFinished: Int
+  latestFinish: Int
+  sumMaxPerc: Int
+  output_Calc: String
+  name: String
+  Function_Type: String
+  taskLongName: String
+  taskStart: Int
+  needed: Boolean
+  sumMinPerc: Int
+  degreeOfParallelization: Int
+  numberPeople: Int
+  latestStart: Int
+  endDay: Int
+  minNumberPeople: Int
+  swimlaneNumber: String
+  maxTimeNeeded: Int
+  original: Boolean
+  daysWorked: Int
+  sdpTaskLongName: String
+  workload: Int
+  lead: String
+  sdpRisks: String
+  minTimeNeeded: Int
+  risks: String
+  mightBeCritical: Boolean
+  isCritical: Boolean
+  taskNumber: String
+  taskId: Int
+  unitTime: String
+  longName: String
+  peopleSkillLevels: [Int]
+  maxPercFloat: [String]
+  inputValues: [String]
+  maxUnit: [String]
+  minPercFloat: [String]
+  maxPercFloatWeighted: [String]
+  support: [String]
+  minPerc: [String]
+  peopleStructure: [String]
+  weights: [String]
+  peopleStructureNumbers: [Int]
+  maxPerc: [String]
+  minPercFloatWeighted: [String]
+  minUnit: [String]
+  dependent_on: [String]
+  peopleStructureNumbersSkills: [Int]
+  deliverables: [String]
+  evidence: [String]
+  peopleCounts: [Int]
+  predecessors: [String]
+}
+type Time{
+  dayCount: Float
+  name: String
+}
+type Level1Team {
+  swimlane: [Swimlane] @relationship(type: "BELONGS_TO_SWIMLANE", direction: OUT)
+  name: String
+  swimlaneId: Int
+  Level2: [Level2Team] @relationship(type: "IS_SUBTEAM_OF", direction: IN)
+
+  id: Int
+  cumulativeResourceDistribution: [Float]
+  cumulativeResourceDistributionRounded: [Int]
+}
+type Level2Team {
+  teamSkillLevel: Float
+  name: String
+  swimlane: [Swimlane] @relationship(type: "BELONGS_TO_SWIMLANE", direction: IN)
+  swimlaneId: Int
+  id: Int
+  resourceDistribution: [Float]
+}
+
+type Mutation {
+  # ExecutePython(name: String!): [String!]!
+
+  updateActivity(startDelay:Float,number:String):Activity
+    @cypher(
+        statement: """
+        MATCH (a:Activity {number: $number})
+        CREATE (a)-[:HAS_EVENT]->(e:Event:UserAction)
+        SET e.type = $startDelay,
+        e.typeName = 'Start Delay',
+        e.originalValue = CASE WHEN a.startDelay IS NULL THEN 0 ELSE a.startDelay END,
+        e.newValue = toFloat($startDelay),
+        e.timeStamp = localdatetime(),
+        e.impact = 'The activity start was delayed by ' + $startDelay + ' days.',
+        a.startDelay = toFloat($startDelay) 
+        RETURN a
+        """
+    )
+}

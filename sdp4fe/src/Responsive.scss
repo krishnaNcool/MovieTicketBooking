@@ -1,0 +1,121 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .header {
+    img {
+      height: 26px;
+    }
+    .header-text {
+      span:first-child {
+        margin-left: 0;
+      }
+      span {
+        margin-left: 5px;
+        font-size: 10px;
+      }
+      div {
+        font-size: 10px;
+      }
+    }
+  }
+
+  .main {
+    padding: 0 1% 0 1%;
+  }
+  .footer {
+    padding: 0 1% 0 1%;
+    div {
+      text-align: left;
+      font-size: smaller;
+      display: flex;
+      align-items: center;
+      &:nth-child(6) {
+        div {
+          text-align: left;
+          font-size: xx-small;
+        }
+      }
+    }
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .header {
+    .header-text {
+      span {
+        font-size: 14px;
+      }
+      div {
+        font-size: 14px;
+      }
+    }
+  }
+  .footer {
+    padding: 0 2.5% 0 2.5%;
+
+    div {
+      // background-color: green;
+      text-align: left;
+      font-size: small;
+
+      &:nth-child(6) {
+        justify-content: right;
+        div {
+          text-align: right;
+          font-size: small;
+        }
+      }
+    }
+    span {
+      padding-left: 2px;
+    }
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .footer {
+    padding: 0 2.5% 0 2.5%;
+
+    div {
+      // background-color: green;
+      text-align: left;
+      font-size: small;
+
+      &:nth-child(6) {
+        justify-content: right;
+        div {
+          text-align: right;
+          font-size: small;
+        }
+      }
+    }
+    span {
+      padding-left: 3px;
+    }
+  }
+  .main {
+    padding: 0 2.5% 0 2.5%;
+  }
+  .landing {
+    height: calc(100vh - 32px);
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 990px) {
+  .footer {
+    div {
+      font-size: small;
+
+      &:nth-child(6) {
+        div {
+          font-size: small;
+        }
+      }
+    }
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}
