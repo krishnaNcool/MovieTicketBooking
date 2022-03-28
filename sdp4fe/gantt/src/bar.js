@@ -288,15 +288,8 @@ export default class Bar {
             }
             this.show_popup();
         });
-        // $.on(this.group, 'mouseleave', e => {
-        //     e.preventDefault();
-        //     e.stopPropagation();
-        //     if (this.action_completed) {
-        //         // just finished a move action, wait for a few seconds
-        //         return;
-        //     }
-        //     this.gantt.hide_popup();
-        // });
+       
+        
     }
 
     show_popup(isRightClick) {

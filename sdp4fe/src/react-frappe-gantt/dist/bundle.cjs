@@ -1774,22 +1774,7 @@ class Gantt {
     }
 
     set_scroll_position() {
-        const parent_element = this.$svg.parentElement;
-        if (!parent_element) return;
-
-        const hours_before_first_task = date_utils.diff(
-            this.get_oldest_starting_date(),
-            this.gantt_start,
-            'hour'
-        );
-
-        const scroll_pos =
-            hours_before_first_task /
-                this.options.step *
-                this.options.column_width -
-            this.options.column_width;
-
-        parent_element.scrollLeft = scroll_pos;
+      
     }
 
     bind_grid_click() {

@@ -1,0 +1,53 @@
+.App {
+  text-align: center;
+}
+#doublescroll
+{
+  overflow: auto; overflow-y: hidden; 
+}
+#doublescroll p
+{
+  margin: 0; 
+  padding: 1em; 
+  white-space: nowrap; 
+}
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+.wrapper1, .wrapper2{width: 300px; border: none 0px RED;
+overflow-x: scroll; overflow-y:hidden;}
+.wrapper1{height: 20px; }
+.wrapper2{height: 200px; }
+.div1 {width:1000px; height: 20px; }
+.div2 {width:1000px; height: 200px; background-color: #88FF88;
+overflow: auto;}
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

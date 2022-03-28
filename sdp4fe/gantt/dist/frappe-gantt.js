@@ -312,7 +312,8 @@ var date_utils = {
 };
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart
-function padStart(str, targetLength, padString) {
+    function padStart(str, targetLength, padString) {
+    
     str = str + '';
     targetLength = targetLength >> 0;
     padString = String(typeof padString !== 'undefined' ? padString : ' ');
@@ -535,14 +536,6 @@ class Bar {
 
     draw_bar() {
         this.$bar = createSVG('rect', {
-            x: this.x,
-            y: this.y,
-            width: this.width,
-            height: this.height,
-            rx: this.corner_radius,
-            ry: this.corner_radius,
-            class: 'bar',
-            append_to: this.bar_group
         });
 
         animateSVG(this.$bar, 'width', 0, this.width);

@@ -88,14 +88,53 @@ export default class Gantt {
         this.$swimlanes_container.classList.add('gantt-swimlanes-container');
 
         // wrapper element
+
+        this.$topscrollbar1 = document.createElement('div1');
+        this.$topscrollbar1.classList.add('div1');
+
+        
+        this.$topscrollbar = document.createElement('wrapper1');
+
+        this.$bottomscrollbar1 = document.createElement('div2');
+        this.$bottomscrollbar1.classList.add('div2');
+
+        this.$bottomscrollbar = document.createElement('wrapper2');
+
+        this.$bottomscrollbar.classList.add('wrapper2');
+
+        this.$topscrollbar.classList.add('wrapper1')
+
         this.$container = document.createElement('div');
+
+    
+        
         this.$container.classList.add('gantt-container');
+
 
         const parent_element = this.$svg.parentElement;
         parent_element.appendChild(this.$swimlanes_container);
+        parent_element.appendChild(this.$topscrollbar1);
+        parent_element.appendChild(this.$topscrollbar);
+        parent_element.appendChild(this.$bottomscrollbar1);
+        parent_element.appendChild(this.$bottomscrollbar);
+
+
+        
         parent_element.appendChild(this.$container);
         this.$container.appendChild(this.$svg);
 
+        //  const parent_element = this.$svg.parentElement;
+        // parent_element.appendChild(this.$swimlanes_container);
+        // parent_element.appendChild(this.$topscrollbar)
+        // parent_element.appendChild(this.$container);
+        // this.$container.appendChild(this.$svg);
+        // this.$topscrollbar.appendChild(this.$svg);
+        
+        // this.$svg_containertop = createSVG('svg', {
+        //     append_to: this.$containertop,
+        //     class: 'gantt-containertop'
+        // });
+        // this.$containertop.appendChild(this.$svg_containertop);
         this.$svg_swimlanes = createSVG('svg', {
             append_to: this.$swimlanes_container,
             class: 'gantt-swimlanes'
@@ -504,8 +543,8 @@ export default class Gantt {
     }
 
     render(updateScroll = true) {
-        const parent_element = this.$svg.parentElement;
-        const currentScroll = parent_element.scrollLeft;
+        // const parent_element = this.$svg.parentElement;
+        // const currentScroll = parent_element.scrollLeft;
         this.clear();
         this.setup_layers();
         this.make_grid();
@@ -533,6 +572,8 @@ export default class Gantt {
             this.is_rendered = true;
         }
     }
+
+    
 
     toggleWidth() {
         const width = this.is_title
@@ -767,6 +808,8 @@ export default class Gantt {
             class: 'grid-header',
             append_to: this.layers.grid
         });
+        this.header.classList.add('rect');
+
     }
 
     make_grid_ticks() {
@@ -1394,6 +1437,15 @@ export default class Gantt {
         let $bar_progress = null;
         let $bar = null;
 
+           $(function(){
+      $(".wrapper1").scroll(function(){
+        $(".wrapper2").scrollLeft($(".wrapper1").scrollLeft());
+      });
+      $(".wrapper2").scroll(function(){
+        $(".wrapper1").scrollLeft($(".wrapper2").scrollLeft());
+      });
+    });
+
         $.on(this.$svg, 'mousedown', '.handle.progress', (e, handle) => {
             is_resizing = true;
             x_on_start = e.offsetX;
@@ -1579,6 +1631,9 @@ export default class Gantt {
             this.options['on_' + event].apply(null, args);
         }
     }
+
+
+
 
     /**
      * Gets the oldest starting date from the list of tasks

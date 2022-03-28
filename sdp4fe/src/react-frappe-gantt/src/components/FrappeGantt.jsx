@@ -1,7 +1,7 @@
 import React, { Component, createRef } from "react";
 import Gantt from "frappe-gantt";
 import Task from "../lib/Task.js";
-
+import { DoubleScrollbar } from "../../../react-double-scrollbar-master/dist/DoubleScrollbar.js";
 export default class FrappeGantt extends Component {
   constructor(props) {
     super(props);
@@ -84,14 +84,16 @@ export default class FrappeGantt extends Component {
 
   render() {
     return (
+      
       <div className="gantt-svg" ref={this._target}>
+      
         <svg
           ref={this._svg}
           width="100%"
           height="100%"
           xmlns="http://www.w3.org/2000/svg"
           xmlnsXlink="http://www.w3.org/1999/xlink"
-        />
+          />
       </div>
     );
   }

@@ -13,7 +13,8 @@ import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import FastForwardIcon from '@mui/icons-material/FastForward';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
-
+import './Components.scss';
+import DoubleScrollbar from '../react-double-scrollbar-master'
 
 const SWIMLANES_QUERY = gql`
   query GetSwimlanes {
@@ -186,10 +187,19 @@ const GanttComponent = () => {
     setOpen(open => !open);
   }
 
+
+
   return (
+    
     <div>
+
+    
+             <DoubleScrollbar><h1>tiwdcuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuugggudccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc</h1></DoubleScrollbar> 
+   
+     
       {!loading && (
         <>
+          <DoubleScrollbar>
           <div className="gant-header">
             Current selection: &nbsp; <span>Program / Continous Program & Finance Monitoring</span>
             {!mobile && (
@@ -225,6 +235,13 @@ const GanttComponent = () => {
               </div>
             )}
           </div>
+    <div className="wrapper1">
+    <div className="div1">
+    </div>
+</div>
+<div className="wrapper2">
+              <div className="div2">
+         <script src="./scrollscript.js" type="text/javascript" />  
           <FrappeGantt
             tasks={result.swimlanes}
             viewMode={view}
@@ -232,21 +249,27 @@ const GanttComponent = () => {
             isFullName={isFullName}
 
             onDblClick={activity => dialogToggle(activity)}
-            isMobile={mobile}
+                isMobile={mobile}
+           
           // onClick={task => console.log("onClick")}
           // onDateChange={(task, start, end) => console.log("onDateChange")}
           // onProgressChange={(task, progress) =>
           //   console.log("onProgressChange")
           // }
           // onTasksChange={tasks => console.log("onTasksChange")}
-          />
-          {show && <div className={"zoom-footer"}>Zoom: {zoomLevel}%</div>}
+          /> 
+                  {show && <div className={"zoom-footer"}>Zoom: {zoomLevel}%</div>}
           <div className="dialog">
             <ActivityDialog activity={selectedActivity} open={open} toggle={dialogToggle}></ActivityDialog>
-          </div>
+            </div>
+           </div>
+            </div>
+            </DoubleScrollbar>
         </>
-      )}
-    </div>
+          )}
+           </div>
+           
+
   );
 };
 
